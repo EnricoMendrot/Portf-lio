@@ -483,57 +483,62 @@ header .container {
    ========================================= */
 footer {
     background: #0b1120;
-    /* Darker than bg */
-    padding: 4rem 0 2rem;
+    padding: 1.5rem 0;
     margin-top: 4rem;
     border-top: 1px solid var(--border-color);
 }
 
 .footer-content {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    text-align: center;
-    gap: 2rem;
+    gap: 1rem;
 }
 
-.contact-info h3 {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
+.footer-left p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    opacity: 0.8;
 }
 
-.contact-info .email-link {
-    font-size: 1.25rem;
-    color: var(--primary-color);
-    font-weight: 700;
-    margin-top: 1rem;
-    display: block;
-}
-
-.contact-info .email-link:hover {
-    text-decoration: underline;
-}
-
-.social-links {
+.footer-center {
     display: flex;
     gap: 1.5rem;
 }
 
-.social-links a {
-    font-size: 1.5rem;
+.footer-center a {
     color: var(--text-secondary);
+    font-size: 1.25rem;
+    transition: all 0.2s ease;
 }
 
-.social-links a:hover {
+.footer-center a:hover {
     color: var(--primary-color);
-    transform: translateY(-3px);
+    transform: translateY(-2px);
 }
 
-.copyright {
-    margin-top: 2rem;
-    font-size: 0.9rem;
+.footer-right .email-link {
     color: var(--text-secondary);
-    opacity: 0.7;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.footer-right .email-link:hover {
+    color: var(--primary-color);
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .footer-right {
+        order: -1;
+        /* Email first on mobile if desired, or keep default */
+    }
 }
 
 /* =========================================
